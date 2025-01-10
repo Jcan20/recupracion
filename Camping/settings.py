@@ -63,11 +63,9 @@ WSGI_APPLICATION = 'Camping.wsgi.application'
 # Database
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL', 'sqlite:///db.sqlite3'),
-        conn_max_age=600
+        default=os.getenv('DATABASE_URL')
     )
 }
-
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#0%1dubg+j(*&l(p#7r-kl131fl+exqqeuf5_k$%e+b&)sv=&5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'recupracion.onrender.com').split(',')
 # Application definition
 
 INSTALLED_APPS = [

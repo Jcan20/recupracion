@@ -1,0 +1,21 @@
+databases:
+  - name: joelito
+    plan: free
+    databaseName: dbrecuperacion
+    user: nacimba
+
+services:
+  - type: web
+    name: Camping
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn Camping.asgi:application -k uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: joelito
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        value: recupracion.onrender.com
